@@ -25,7 +25,7 @@ module Doorkeeper
              Doorkeeper::Application.table_name
            )
           unless Doorkeeper::Application.new.attributes.include?("scopes")
-            fail <<-MSG.squish
+            puts <<-MSG.squish
 [doorkeeper] Missing column: `oauth_applications.scopes`.
 Run `rails generate doorkeeper:application_scopes
 && rake db:migrate` to add it.
